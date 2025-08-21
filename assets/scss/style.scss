@@ -1,0 +1,89 @@
+@use 'variables';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: variables.$font-color;
+    background-color: variables.$bgcolor;
+}
+
+.site-header {
+    background-color: varables.$primary-color;
+    height: variables.$header-height;
+    @include mixin-flex-center;
+    justify-content: space-between;
+    padding: 0 20px;
+
+    h1 {
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+
+        li a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
+
+.section {
+    @include mixin.section-padding;
+    text-align: center;
+
+    h2 {
+        color: variables.$font-color;
+        margin-bottom: 20px;
+    }
+
+    p {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 400px;
+
+
+        input, textarea {
+            color: variables.$fontcolor;
+            padding: 10px;
+            border: 1px solid #3C434C;
+            border-radius: 4px
+            background-color: #151B23;
+        }
+
+        button {
+            padding: 10px;
+            background-color: variables.$secondary-color;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darken(variables.$secondary-color, 10%);
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: variables.$primary-color;
+    color: white;
+}
